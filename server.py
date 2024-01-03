@@ -1,5 +1,3 @@
-import time
-
 import flwr as fl
 
 
@@ -19,5 +17,3 @@ def run_server(num_federated_rounds: int) -> None:
         config=fl.server.ServerConfig(num_rounds=num_federated_rounds),
         strategy=strategy,
     )
-
-    time.sleep(10000000000000000)

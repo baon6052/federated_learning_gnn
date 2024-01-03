@@ -56,14 +56,29 @@ def run_experiment(
             num_classes=dataset.dataset.num_classes,
         )
 
+    threads = []
+
     print("Running Server")
-    Thread(target=run_server, args=(num_rounds))
+    server_thread = Thread(target=run_server, args=(num_rounds,))
+    server_thread.start()
+    threads.append(server_thread)
+    time.sleep(3)
 
     for client_id in range(0, num_clients):
         print(f"Starting client {client_id} for {experiment_name}")
-        # Thread(target = run_client, args=(model, dataset, epochs_per_client))
-        # time.sleep(10000)
-        run_client(model, dataset, epochs_per_client)
+        client_thread = Thread(
+            target=run_client,
+            args=(
+                model,
+                dataset,
+                epochs_per_client,
+            ),
+        )
+        client_thread.start()
+        threads.append(client_thread)
+
+    for thread in threads:
+        thread.join()
 
 
 @click.command()

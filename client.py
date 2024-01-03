@@ -1,20 +1,11 @@
-import argparse
 import logging
-import time
 from collections import OrderedDict
 
 import flwr as fl
 import lightning as L
 import torch
 
-from datasets.dataset import (
-    Dataset,
-    EdgeFeatureSliceDataset,
-    GraphPartitionSliceDataset,
-    NodeFeatureSliceDataset,
-    PlanetoidDataset,
-    PlanetoidDatasetType,
-)
+from datasets.dataset import Dataset, PlanetoidDataset
 from models.graph_attention_network import GAT
 from models.graph_convolutional_neural_network import GCN
 
@@ -86,5 +77,3 @@ def run_client(model: GCN | GAT, dataset: Dataset, num_epochs: int) -> None:
     # Flower client
     client = FlowerClient(model, dataset, num_epochs)
     fl.client.start_numpy_client(server_address="localhost:8080", client=client)
-
-    time.sleep(10000000000000000)
