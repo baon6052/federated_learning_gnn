@@ -3,3 +3,4 @@ lightning_logs
 datasets/Cora
 datasets/PubMed
 datasets/CiteSeet
+wandb

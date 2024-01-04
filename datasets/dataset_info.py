@@ -1,11 +1,16 @@
-def print_node_feature_slice_dataset_info() -> None:
+def print_node_feature_slice_dataset_info(
+    self,
+    features,
+    partition_features,
+    num_features,
+    overlap_features,
+    num_unique_features,
+) -> None:
     print("Number of clients = ", self.num_partitions)
     print("percentage overlap  = ", self.overlap_percent)
 
     print("number of total nodes = ", features.shape[0])
-    print(
-        "Number of nodes in each client = ", partition_features.shape[0]
-    )
+    print("Number of nodes in each client = ", partition_features.shape[0])
 
     print("Number of total features = ", num_features)
 
