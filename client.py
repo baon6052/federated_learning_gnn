@@ -5,9 +5,13 @@ import flwr as fl
 import lightning as L
 import torch
 
+<<<<<<< Updated upstream
 from datasets.dataset import PlanetoidDataset, PlanetoidDatasetType
 from datasets.dataset import NodeFeatureSliceDataset, EdgeFeatureSliceDataset, GraphPartitionSliceDataset
 
+=======
+from datasets.dataset import CustomDataset, PlanetoidDataset
+>>>>>>> Stashed changes
 from models.graph_attention_network import GAT
 from models.graph_convolutional_neural_network import GCN
 
@@ -76,6 +80,7 @@ def _set_parameters(model, parameters):
     model.load_state_dict(state_dict, strict=True)
 
 
+<<<<<<< Updated upstream
 def main() -> None:
     parser = argparse.ArgumentParser(description="Flower Client configuration")
 
@@ -184,6 +189,9 @@ def main() -> None:
             num_classes=dataset.dataset.num_classes,
         )
 
+=======
+def run_client(model: GCN | GAT, dataset: CustomDataset, num_epochs: int) -> None:
+>>>>>>> Stashed changes
     # Flower client
     client = FlowerClient(model, sliced_data, args.Epochs_per_client)
     fl.client.start_numpy_client(server_address="127.0.0.1:8080", client=client)
