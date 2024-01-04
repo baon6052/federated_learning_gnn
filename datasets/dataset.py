@@ -51,7 +51,7 @@ class PlanetoidDatasetType(Enum):
 
 
 
-class PlanetoidDataset():
+class PlanetoidDataset:
     def __init__(self, name: PlanetoidDatasetType, num_clients: int):
         self.dataset = Planetoid(root="./datasets", name=name.value)
         self.num_clients = num_clients
@@ -60,17 +60,17 @@ class PlanetoidDataset():
          self.num_features_per_client) = self._get_datasets()
 
     def _get_datasets(self) -> None:
-        return [CustomDataset(dataset = deepcopy(self.dataset)) for _ in range(self.num_clients)], self.dataset.x.shape[0]
+        return [CustomDataset(dataset = deepcopy(self.dataset)) for _ in range(self.num_clients)], self.dataset.x.shape[1]
 
 
 class NodeFeatureSliceDataset:
-    def __init__(self, dataset: PlanetoidDataset, num_clients: int, overlap_percent: int = 0, verbose: bool = False) -> None:
-        self.dataset = dataset
+    def __init__(self, name: PlanetoidDatasetType, num_clients: int, overlap_percent: int = 0, verbose: bool = False) -> None:
+        self.dataset = Planetoid(root="./datasets", name=name.value)
         self.num_clients = num_clients
         self.overlap_percent = overlap_percent
         self.verbose = verbose
 
-        self.num_classes = self.dataset.dataset.num_classes
+        self.num_classes = self.dataset.num_classes
 
         (self.dataset_per_client, 
          self.num_features_per_client) = self._get_datasets()
@@ -78,7 +78,7 @@ class NodeFeatureSliceDataset:
 
     def _get_datasets(self) -> list[Data]:
         # defining overlap as %  of total dataset size
-        data = self.dataset.dataset[0]
+        data = self.dataset[0]
         features = data.x
         num_features = data.x.shape[1]
 
@@ -107,13 +107,13 @@ class NodeFeatureSliceDataset:
             #copying original Dataset object defined in constructor and changing the data.x 
             # part of it, keeping the rest the same
             new_dataset_object = deepcopy(self.dataset)
-            new_dataset_object.dataset[0].x = partition_features
+            new_dataset_object[0].x = partition_features
             dataset_per_client.append(new_dataset_object)
 
         if self.verbose:
             print_node_feature_slice_dataset_info()
 
-        return [CustomDataset(dataset=data) for data in dataset_per_client], partition_features.shape[0]
+        return [CustomDataset(dataset=data) for data in dataset_per_client], partition_features.shape[1]
 
 
 class EdgeFeatureSliceDataset:

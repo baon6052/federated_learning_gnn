@@ -2,7 +2,7 @@
     "experiment_1": {
         "num_clients": 10,
         "dataset_name": "Cora",
-        "slice_method": null,
+        "slice_method": "node_feature",
         "percentage_overlap": 0,
         "model_type": "GAT",
         "num_hidden_params": 16,

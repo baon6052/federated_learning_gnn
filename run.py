@@ -38,7 +38,7 @@ def run_experiment(
     custom_dataset = PlanetoidDataset(PlanetoidDatasetType(dataset_name), num_clients=num_clients)
 
     if slice_method == "node_feature":
-        custom_dataset = NodeFeatureSliceDataset(custom_dataset, 
+        custom_dataset = NodeFeatureSliceDataset(PlanetoidDatasetType(dataset_name), 
                                           num_clients=num_clients,
                                           overlap_percent=percentage_overlap)
     elif slice_method == "edge_feature":
