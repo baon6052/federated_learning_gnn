@@ -48,12 +48,12 @@ class FlowerClient(fl.client.NumPyClient):
         trainer = L.Trainer(accelerator="cpu")
         results = trainer.test(self.model, self.dataset.test_dataloader())
 
-        loss = results[0]["test_loss"]
+        accuracy = results[0]["test_accuracy"]
 
         return (
-            float(loss),
+            float(accuracy),
             int(self.dataset.dataset[0].test_mask.sum()),
-            {"loss": loss},
+            {"loss": accuracy},
         )
 
 

@@ -105,5 +105,9 @@ class GAT(L.LightningModule):
         acc = (pred[node_mask] == batch.y[label_mask]).float().mean()
 
         self.log(
-            f"{stage}_loss", acc, prog_bar=False, sync_dist=True, logger=True
+            f"{stage}_accuracy",
+            acc,
+            prog_bar=False,
+            sync_dist=True,
+            logger=True,
         )

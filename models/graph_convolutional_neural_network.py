@@ -80,4 +80,4 @@ class GCN(L.LightningModule):
 
         # loss = self.criterion(out[node_mask], batch.y[label_mask])
         acc = (pred[node_mask] == batch.y[label_mask]).float().mean()
-        self.log(f"{stage}_loss", acc, prog_bar=False)
+        self.log(f"{stage}_accuracy", acc, prog_bar=False)
