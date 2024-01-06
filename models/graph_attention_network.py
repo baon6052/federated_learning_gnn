@@ -1,4 +1,5 @@
 import lightning as L
+import torch
 import torch.nn.functional as F
 from torch import nn, optim
 from torch_geometric.nn import GATConv
@@ -12,13 +13,28 @@ class GAT(L.LightningModule):
         num_classes: int,
         num_heads: int = 8,
         dropout: float = 0.6,
+        num_hidden_layers: int = 0,
         visualise: bool = False,
     ):
         super().__init__()
-
+        torch.manual_seed(42)
         self.conv1 = GATConv(
             num_features, num_hidden, heads=num_heads, dropout=dropout
         )
+
+        self.hidden_layers = []
+        for i in range(1, num_hidden_layers + 1):
+            self.hidden_layers.append(
+                GATConv(
+                    num_hidden * num_heads,
+                    num_hidden,
+                    heads=num_heads,
+                    dropout=dropout,
+                )
+            )
+
+        self.hidden_layers = nn.ModuleList(self.hidden_layers)
+
         self.conv2 = GATConv(
             num_hidden * num_heads,
             num_classes,
@@ -34,6 +50,12 @@ class GAT(L.LightningModule):
         x = F.dropout(x, p=0.6, training=self.training)
         x = self.conv1(x, edge_index)
         x = F.elu(x)
+
+        for hidden_layer in self.hidden_layers:
+            x = F.dropout(x, p=0.6, training=self.training)
+            x = hidden_layer(x, edge_index)
+            x = F.elu(x)
+
         x = F.dropout(x, p=0.6, training=self.training)
         x = self.conv2(x, edge_index)
 
