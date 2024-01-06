@@ -1,5 +1,4 @@
 import lightning as L
-import torch
 import torch.nn.functional as F
 from torch import nn, optim
 from torch_geometric.nn import GATConv
@@ -18,7 +17,6 @@ class GAT(L.LightningModule):
         learning_rate: float = 0.01,
     ):
         super().__init__()
-        torch.manual_seed(42)
         self.conv1 = GATConv(
             num_features,
             num_hidden,
@@ -68,9 +66,7 @@ class GAT(L.LightningModule):
         return F.log_softmax(x, dim=1), x
 
     def configure_optimizers(self):
-        optimizer = optim.SGD(
-            self.parameters(), lr=self.learning_rate, momentum=0
-        )  #################################################################################################################################################
+        optimizer = optim.Adam(self.parameters(), lr=self.learning_rate)
         return optimizer
 
     def training_step(self, batch, batch_idx):
@@ -79,7 +75,9 @@ class GAT(L.LightningModule):
         batch = batch.cpu()
         loss = self.criterion(out[batch.train_mask], batch.y[batch.train_mask])
 
-        self.log("train_loss", loss, prog_bar=False, sync_dist=True, logger=True)
+        self.log(
+            "train_loss", loss, prog_bar=False, sync_dist=True, logger=True
+        )
 
         return loss
 

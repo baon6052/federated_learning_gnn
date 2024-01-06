@@ -179,7 +179,9 @@ def run_experiment(
 @click.option(
     "--slice_method",
     default=None,
-    type=click.Choice([None, "node_feature", "edge_feature", "graph_partition"]),
+    type=click.Choice(
+        [None, "node_feature", "edge_feature", "graph_partition"]
+    ),
 )
 @click.option("--percentage_overlap", default=0)
 @click.option("--model_type", default="GAT", type=click.Choice(["GCN", "GAT"]))
@@ -209,7 +211,9 @@ def run(
     dry_run: bool,
 ):
     if experiment_config_filename:
-        with open(f"experiment_configs/{experiment_config_filename}.json") as json_file:
+        with open(
+            f"experiment_configs/{experiment_config_filename}.json"
+        ) as json_file:
             experiments = json.load(json_file)
 
         if experiment_name:
