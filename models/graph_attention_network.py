@@ -72,11 +72,7 @@ class GAT(L.LightningModule):
         loss = self.criterion(out[batch.train_mask], batch.y[batch.train_mask])
 
         self.log(
-            "train_loss",
-            loss,
-            prog_bar=False,
-            sync_dist=True,
-            logger=True,
+            "train_loss", loss, prog_bar=False, sync_dist=True, logger=True
         )
 
         return loss

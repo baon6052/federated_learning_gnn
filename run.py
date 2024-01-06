@@ -16,13 +16,19 @@ from datasets.dataset import (
 from models.graph_attention_network import GAT
 from models.graph_convolutional_neural_network import GCN
 
-wandb.init(project="federated_learning_gnn", entity="ml-sys")
-
 
 def run_experiment(
-    experiment_data: dict[str:any], experiment_name: str = "Bespoke Experiment"
+    experiment_data: dict[str:any],
+    experiment_name: str = "Bespoke Experiment",
+    dry_run: bool = True,
 ):
     print(f"Running Experiement: {experiment_name}")
+    if dry_run:
+        wandb.init(project="my-awesome-project", entity="ml-sys", name=experiment_name)
+    else:
+        wandb.init(
+            project="federated_learning_gnn", entity="ml-sys", name=experiment_name
+        )
 
     num_clients = experiment_data["num_clients"]
     dataset_name = experiment_data["dataset_name"]
@@ -30,6 +36,7 @@ def run_experiment(
     percentage_overlap = experiment_data["percentage_overlap"]
     model_type = experiment_data["model_type"]
     num_hidden_params = experiment_data["num_hidden_params"]
+    num_hidden_layers = experiment_data["num_hidden_layers"]
     epochs_per_client = experiment_data["epochs_per_client"]
     num_rounds = experiment_data["num_rounds"]
     aggregation_strategy = experiment_data["aggregation_strategy"]
@@ -54,12 +61,15 @@ def run_experiment(
         num_features=custom_dataset.num_features_per_client,
         num_hidden=num_hidden_params,
         num_classes=custom_dataset.num_classes,
+        num_hidden_layers=num_hidden_layers,
     )
 
     if model_type == "GCN":
         model = GCN(
             num_features=custom_dataset.num_features_per_client,
             num_classes=custom_dataset.num_classes,
+            num_hidden=num_hidden_params,
+            num_hidden_layers=num_hidden_layers,
         )
 
     client_fn_partial = partial(
@@ -156,13 +166,12 @@ def run_experiment(
 @click.option(
     "--slice_method",
     default=None,
-    type=click.Choice(
-        [None, "node_feature", "edge_feature", "graph_partition"]
-    ),
+    type=click.Choice([None, "node_feature", "edge_feature", "graph_partition"]),
 )
 @click.option("--percentage_overlap", default=0)
 @click.option("--model_type", default="GAT", type=click.Choice(["GCN", "GAT"]))
 @click.option("--num_hidden_params", default=16)
+@click.option("--num_hidden_layers", default=1)
 @click.option("--epochs_per_client", default=10)
 @click.option("--num_rounds", default=10)
 @click.option("--aggregation_strategy", default="FedAvg")
@@ -176,6 +185,7 @@ def run(
     percentage_overlap: int,
     model_type: str,
     num_hidden_params: int,
+    num_hidden_layers: int,
     epochs_per_client: int,
     num_rounds: int,
     aggregation_strategy: str,
@@ -184,24 +194,16 @@ def run(
     dry_run: bool,
 ):
     if experiment_config_filename:
-        with open(
-            f"experiment_configs/{experiment_config_filename}.json"
-        ) as json_file:
+        with open(f"experiment_configs/{experiment_config_filename}.json") as json_file:
             experiments = json.load(json_file)
 
         if experiment_name:
             experiment_data = experiments[experiment_name]
             print(experiment_data)
-            run_experiment(
-                experiment_data,
-                experiment_name=experiment_name,
-            )
+            run_experiment(experiment_data, experiment_name=experiment_name)
         else:
             for experiment_name, experiment_data in experiments.items():
-                run_experiment(
-                    experiment_data,
-                    experiment_name=experiment_name,
-                )
+                run_experiment(experiment_data, experiment_name=experiment_name)
     else:
         experiment_data = {
             "num_clients": num_clients,
@@ -210,6 +212,7 @@ def run(
             "percentage_overlap": percentage_overlap,
             "model_type": model_type,
             "num_hidden_params": num_hidden_params,
+            "num_hidden_layers": num_hidden_layers,
             "epochs_per_client": epochs_per_client,
             "num_rounds": num_rounds,
             "aggregation_strategy": aggregation_strategy,
