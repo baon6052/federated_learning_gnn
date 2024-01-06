@@ -18,25 +18,27 @@ class GAT(L.LightningModule):
     ):
         super().__init__()
         torch.manual_seed(42)
-        self.conv1 = GATConv(
-            num_features, num_hidden, heads=num_heads, dropout=dropout
-        )
+        self.conv1 = GATConv(num_features, num_hidden, heads=num_heads, dropout=dropout)
 
+        out_features = num_hidden * num_heads
         self.hidden_layers = []
         for i in range(1, num_hidden_layers + 1):
+            in_features = num_hidden * num_heads * i
+            out_features = in_features * num_heads
             self.hidden_layers.append(
                 GATConv(
-                    num_hidden * num_heads,
+                    in_features,
                     num_hidden,
                     heads=num_heads,
                     dropout=dropout,
+                    concat=False,
                 )
             )
 
         self.hidden_layers = nn.ModuleList(self.hidden_layers)
 
         self.conv2 = GATConv(
-            num_hidden * num_heads,
+            out_features,
             num_classes,
             concat=False,
             heads=1,
@@ -71,9 +73,7 @@ class GAT(L.LightningModule):
         batch = batch.cpu()
         loss = self.criterion(out[batch.train_mask], batch.y[batch.train_mask])
 
-        self.log(
-            "train_loss", loss, prog_bar=False, sync_dist=True, logger=True
-        )
+        self.log("train_loss", loss, prog_bar=False, sync_dist=True, logger=True)
 
         return loss
 

@@ -7,7 +7,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 4,
         "num_hidden_layers": 1,
         "dry_run": true
@@ -20,7 +20,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 4,
         "num_hidden_layers": 2,
         "dry_run": true
@@ -33,7 +33,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 4,
         "num_hidden_layers": 4,
         "dry_run": true
@@ -46,7 +46,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 8,
         "num_hidden_layers": 1,
         "dry_run": true
@@ -59,7 +59,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 8,
         "num_hidden_layers": 2,
         "dry_run": true
@@ -72,7 +72,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 8,
         "num_hidden_layers": 4,
         "dry_run": true
@@ -85,7 +85,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 16,
         "num_hidden_layers": 1,
         "dry_run": true
@@ -98,7 +98,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 16,
         "num_hidden_layers": 2,
         "dry_run": true
@@ -111,7 +111,7 @@
         "model_type": "GCN",
         "epochs_per_client": 200,
         "num_rounds": 1,
-        "aggregation_strategy": "FedAdagrad",
+        "aggregation_strategy": "FedAvg",
         "num_hidden_params": 16,
         "num_hidden_layers": 4,
         "dry_run": true

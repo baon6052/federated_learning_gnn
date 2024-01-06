@@ -15,9 +15,9 @@ fixed_params = {
     "slice_method": "node_feature",
     "percentage_overlap": 0,
     "model_type": "GAT",
-    "epochs_per_client": 10,
-    "num_rounds": 1,
-    "aggregation_strategy": "FedAdagrad",
+    "epochs_per_client": 1,
+    "num_rounds": 100,
+    "aggregation_strategy": "FedAvg",
     "dry_run": True,
 }
 
