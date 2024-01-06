@@ -71,29 +71,29 @@ def run_experiment(
     )
 
     strategy = fl.server.strategy.FedAvg(
-        fraction_fit=0.5,
-        fraction_evaluate=0.5,
-        min_fit_clients=5,
-        min_evaluate_clients=5,
-        min_available_clients=5,
+        fraction_fit=1.0,
+        fraction_evaluate=1.0,
+        min_fit_clients=num_clients,
+        min_evaluate_clients=num_clients,
+        min_available_clients=num_clients,
     )
 
     if aggregation_strategy == "FedProx":
         strategy = fl.server.strategy.FedProx(
             fraction_fit=1.0,
             fraction_evaluate=1.0,
-            min_fit_clients=5,
-            min_evaluate_clients=5,
-            min_available_clients=5,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
             proximal_mu=0.01,  # TODO: speak about potential ablation study for this  # noqa:E501
         )
     elif aggregation_strategy == "FedYogi":
         strategy = fl.server.strategy.FedYogi(
             fraction_fit=1.0,
             fraction_evaluate=1.0,
-            min_fit_clients=5,
-            min_evaluate_clients=5,
-            min_available_clients=5,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
@@ -102,9 +102,9 @@ def run_experiment(
         strategy = fl.server.strategy.FedAdam(
             fraction_fit=1.0,
             fraction_evaluate=1.0,
-            min_fit_clients=5,
-            min_evaluate_clients=5,
-            min_available_clients=5,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
@@ -113,9 +113,9 @@ def run_experiment(
         strategy = fl.server.strategy.FedOpt(
             fraction_fit=1.0,
             fraction_evaluate=1.0,
-            min_fit_clients=5,
-            min_evaluate_clients=5,
-            min_available_clients=5,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
@@ -124,9 +124,9 @@ def run_experiment(
         strategy = fl.server.strategy.FedAdagrad(
             fraction_fit=1.0,
             fraction_evaluate=1.0,
-            min_fit_clients=5,
-            min_evaluate_clients=5,
-            min_available_clients=5,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
