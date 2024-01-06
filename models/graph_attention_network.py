@@ -15,10 +15,18 @@ class GAT(L.LightningModule):
         dropout: float = 0.6,
         num_hidden_layers: int = 0,
         visualise: bool = False,
+        learning_rate: float = 0.01,
     ):
         super().__init__()
         torch.manual_seed(42)
-        self.conv1 = GATConv(num_features, num_hidden, heads=num_heads, dropout=dropout)
+        self.conv1 = GATConv(
+            num_features,
+            num_hidden,
+            heads=num_heads,
+            dropout=dropout,
+            concat=True,
+        )
+        self.learning_rate = learning_rate
 
         out_features = num_hidden * num_heads
         self.hidden_layers = []
@@ -28,21 +36,17 @@ class GAT(L.LightningModule):
             self.hidden_layers.append(
                 GATConv(
                     in_features,
-                    num_hidden,
+                    out_features,
                     heads=num_heads,
                     dropout=dropout,
-                    concat=False,
+                    concat=True,
                 )
             )
 
         self.hidden_layers = nn.ModuleList(self.hidden_layers)
 
         self.conv2 = GATConv(
-            out_features,
-            num_classes,
-            concat=False,
-            heads=1,
-            dropout=dropout,
+            out_features, num_classes, concat=False, heads=1, dropout=dropout
         )
 
         self.visualise = visualise
@@ -64,7 +68,9 @@ class GAT(L.LightningModule):
         return F.log_softmax(x, dim=1), x
 
     def configure_optimizers(self):
-        optimizer = optim.Adam(self.parameters(), lr=0.01)
+        optimizer = optim.SGD(
+            self.parameters(), lr=self.learning_rate, momentum=0
+        )  #################################################################################################################################################
         return optimizer
 
     def training_step(self, batch, batch_idx):

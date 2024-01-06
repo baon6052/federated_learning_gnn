@@ -24,10 +24,18 @@ def run_experiment(
 ):
     print(f"Running Experiement: {experiment_name}")
     if dry_run:
-        wandb.init(project="my-awesome-project", entity="ml-sys", name=experiment_name)
+        wandb.init(
+            project="my-awesome-project",
+            entity="ml-sys",
+            name=experiment_name,
+            group="rev1",
+        )
     else:
         wandb.init(
-            project="federated_learning_gnn", entity="ml-sys", name=experiment_name
+            project="federated_learning_gnn",
+            entity="ml-sys",
+            name=experiment_name,
+            group="rev1",
         )
 
     num_clients = experiment_data["num_clients"]
@@ -37,6 +45,7 @@ def run_experiment(
     model_type = experiment_data["model_type"]
     num_hidden_params = experiment_data["num_hidden_params"]
     num_hidden_layers = experiment_data["num_hidden_layers"]
+    learning_rate = experiment_data["learning_rate"]
     epochs_per_client = experiment_data["epochs_per_client"]
     num_rounds = experiment_data["num_rounds"]
     aggregation_strategy = experiment_data["aggregation_strategy"]
@@ -62,6 +71,7 @@ def run_experiment(
         num_hidden=num_hidden_params,
         num_classes=custom_dataset.num_classes,
         num_hidden_layers=num_hidden_layers,
+        learning_rate=learning_rate,
     )
 
     if model_type == "GCN":
@@ -70,6 +80,7 @@ def run_experiment(
             num_classes=custom_dataset.num_classes,
             num_hidden=num_hidden_params,
             num_hidden_layers=num_hidden_layers,
+            learning_rate=learning_rate,
         )
 
     client_fn_partial = partial(
@@ -155,6 +166,8 @@ def run_experiment(
     for federated_round, accuracy in metrics.losses_distributed:
         wandb.log({"test_accuracy": accuracy})
 
+    wandb.finish()
+
 
 @click.command()
 @click.option("--num_clients", default=10)
@@ -172,6 +185,7 @@ def run_experiment(
 @click.option("--model_type", default="GAT", type=click.Choice(["GCN", "GAT"]))
 @click.option("--num_hidden_params", default=16)
 @click.option("--num_hidden_layers", default=1)
+@click.option("--learning_rate", default=0.01)
 @click.option("--epochs_per_client", default=10)
 @click.option("--num_rounds", default=10)
 @click.option("--aggregation_strategy", default="FedAvg")
@@ -186,6 +200,7 @@ def run(
     model_type: str,
     num_hidden_params: int,
     num_hidden_layers: int,
+    learning_rate: float,
     epochs_per_client: int,
     num_rounds: int,
     aggregation_strategy: str,
@@ -206,6 +221,7 @@ def run(
                 run_experiment(experiment_data, experiment_name=experiment_name)
     else:
         experiment_data = {
+            "experiment_config_filename": experiment_config_filename,
             "num_clients": num_clients,
             "dataset_name": dataset_name,
             "slice_method": slice_method,
@@ -213,6 +229,7 @@ def run(
             "model_type": model_type,
             "num_hidden_params": num_hidden_params,
             "num_hidden_layers": num_hidden_layers,
+            "learning_rate": learning_rate,
             "epochs_per_client": epochs_per_client,
             "num_rounds": num_rounds,
             "aggregation_strategy": aggregation_strategy,

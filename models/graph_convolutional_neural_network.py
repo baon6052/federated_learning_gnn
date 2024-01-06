@@ -13,10 +13,12 @@ class GCN(L.LightningModule):
         num_hidden: int = 4,
         num_hidden_layers: int = 1,
         visualise: bool = False,
+        learning_rate: float = 0.01,
     ):
         super().__init__()
 
         self.visualise = visualise
+        self.learning_rate = learning_rate
 
         torch.manual_seed(42)
         self.conv1 = GCNConv(num_features, num_hidden)
@@ -47,7 +49,7 @@ class GCN(L.LightningModule):
         return out, h
 
     def configure_optimizers(self):
-        optimizer = optim.Adam(self.parameters(), lr=0.001)
+        optimizer = optim.Adam(self.parameters(), lr=self.learning_rate)
         return optimizer
 
     def training_step(self, batch, batch_idx):
