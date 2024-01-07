@@ -14,6 +14,7 @@ fixed_params = {
     "learning_rate": 0.01,
     "num_hidden_params": 16,
     "num_hidden_layers": 2,
+    "client_poison_perc": 0,
 }
 
 datasets = ["Cora", "CiteSeer", "PubMed"]

@@ -20,6 +20,7 @@ fixed_params = {
     "num_rounds": 50,
     "aggregation_strategy": "FedAvg",
     "dry_run": False,
+    "client_poison_perc": 0,
 }
 
 for model_type in ["GAT", "GCN"]:

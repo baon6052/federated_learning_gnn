@@ -50,6 +50,7 @@ def run_experiment(
     epochs_per_client = experiment_data["epochs_per_client"]
     num_rounds = experiment_data["num_rounds"]
     aggregation_strategy = experiment_data["aggregation_strategy"]
+    client_poison_perc = experiment_data["client_poison_perc"]
 
     custom_dataset = PlanetoidDataset(
         PlanetoidDatasetType(dataset_name), num_clients=num_clients
@@ -60,6 +61,7 @@ def run_experiment(
             PlanetoidDatasetType(dataset_name),
             num_clients=num_clients,
             overlap_percent=percentage_overlap,
+            client_poison_perc=client_poison_perc,
         )
     elif slice_method == "edge_feature":
         custom_dataset = EdgeFeatureSliceDataset(custom_dataset)
@@ -153,6 +155,32 @@ def run_experiment(
                 get_model_parameters(model)
             ),
         )
+    elif aggregation_strategy == "Krum":
+        poisoned_client_num = int((client_poison_perc / 100) * num_clients)
+        to_keep = num_clients - poisoned_client_num - 2  # theoretical Krum formula
+        strategy = fl.server.strategy.Krum(
+            fraction_fit=1.0,
+            fraction_evaluate=1.0,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
+            initial_parameters=fl.common.ndarrays_to_parameters(
+                get_model_parameters(model)
+            ),
+            # to_keep=to_keep,
+        )
+
+    elif aggregation_strategy == "FedMedian":
+        strategy = fl.server.strategy.FedMedian(
+            fraction_fit=1.0,
+            fraction_evaluate=1.0,
+            min_fit_clients=num_clients,
+            min_evaluate_clients=num_clients,
+            min_available_clients=num_clients,
+            initial_parameters=fl.common.ndarrays_to_parameters(
+                get_model_parameters(model)
+            ),
+        )
 
     client_resources = {"num_cpus": 1, "num_gpus": 0.0}
 
@@ -190,6 +218,7 @@ def run_experiment(
 @click.option("--epochs_per_client", default=10)
 @click.option("--num_rounds", default=10)
 @click.option("--aggregation_strategy", default="FedAvg")
+@click.option("--client_poison_perc", default=None)
 @click.option("--experiment_config_filename", required=False, default=None)
 @click.option("--experiment_name", required=False, default=None)
 @click.option("--dry_run", default=True)
@@ -205,6 +234,7 @@ def run(
     epochs_per_client: int,
     num_rounds: int,
     aggregation_strategy: str,
+    client_poison_perc: float,
     experiment_config_filename: str,
     experiment_name: str,
     dry_run: bool,
@@ -234,6 +264,7 @@ def run(
             "epochs_per_client": epochs_per_client,
             "num_rounds": num_rounds,
             "aggregation_strategy": aggregation_strategy,
+            "client_poison_perc": client_poison_perc,
             "dry_run": dry_run,
         }
         run_experiment(experiement_data=experiment_data)

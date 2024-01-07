@@ -1,6 +1,7 @@
 from copy import deepcopy
 from enum import Enum
 
+import numpy as np
 import lightning as L
 import torch
 from torch_geometric.data import Data
@@ -140,6 +141,7 @@ class NodeFeatureSliceDataset:
         self,
         name: PlanetoidDatasetType,
         num_clients: int,
+        client_poison_perc: None,
         overlap_percent: int = 0,
         verbose: bool = False,
     ) -> None:
@@ -150,10 +152,25 @@ class NodeFeatureSliceDataset:
 
         self.num_classes = self.dataset.num_classes
 
+        self.client_poison_perc = client_poison_perc
+        self.poison_client_indices = None
+
+        if self.client_poison_perc:
+            self.poison_client_indices = self.select_clients_to_poison()
+
         (
             self.dataset_per_client,
             self.num_features_per_client,
         ) = self._get_datasets()
+
+    def select_clients_to_poison(self):
+        num_poisoned_clients = int(self.num_clients * (self.client_poison_perc / 100))
+
+        poisoned_client_indices = np.random.choice(
+            self.num_clients, num_poisoned_clients, replace=False
+        )
+
+        return poisoned_client_indices
 
     def _get_datasets(self) -> list[Data]:
         # defining overlap as %  of total dataset size
@@ -171,12 +188,25 @@ class NodeFeatureSliceDataset:
         overlap_features = shuffled_features[:, :num_overlap_features]
         dataset_per_client = []
 
+        node_features_flip_frac = 0.1  # 0 to 1
+
         for i in range(self.num_clients):
             start_idx = num_overlap_features + i * num_unique_features
             end_idx = start_idx + num_unique_features
 
             unique_features = shuffled_features[:, start_idx:end_idx]
             partition_features = torch.cat((overlap_features, unique_features), dim=1)
+
+            if self.client_poison_perc and i in self.poison_client_indices:
+                shuffled_indices = torch.randperm(partition_features.shape[1])
+                indices_to_poison = shuffled_indices[
+                    : int(partition_features.shape[1] * node_features_flip_frac)
+                ]
+
+                # for index in indices_to_poison:
+                partition_features[:, indices_to_poison] = (
+                    1.0 - partition_features[:, indices_to_poison]
+                )
 
             dataset_per_client.append(
                 Data(
