@@ -155,7 +155,7 @@ class NodeFeatureSliceDataset:
         self.client_poison_perc = client_poison_perc
         self.poison_client_indices = None
 
-        if self.client_poison_perc:
+        if self.client_poison_perc != 0:
             self.poison_client_indices = self.select_clients_to_poison()
 
         (
@@ -197,7 +197,7 @@ class NodeFeatureSliceDataset:
             unique_features = shuffled_features[:, start_idx:end_idx]
             partition_features = torch.cat((overlap_features, unique_features), dim=1)
 
-            if self.client_poison_perc and i in self.poison_client_indices:
+            if self.client_poison_perc != 0 and i in self.poison_client_indices:
                 shuffled_indices = torch.randperm(partition_features.shape[1])
                 indices_to_poison = shuffled_indices[
                     : int(partition_features.shape[1] * node_features_flip_frac)

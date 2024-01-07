@@ -167,7 +167,6 @@ def run_experiment(
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
-            # to_keep=to_keep,
         )
 
     elif aggregation_strategy == "FedMedian":
