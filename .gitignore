@@ -2,6 +2,7 @@
 lightning_logs
 datasets/Cora
 datasets/PubMed
-datasets/CiteSeet
+datasets/CiteSeer
 wandb
 .vscode
+**.DS_Store**
