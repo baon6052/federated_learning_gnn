@@ -1,5 +1,5 @@
 {
-    "GAT_features_4_layers_0_lr_0.01": {
+    "GAT_features-4_layers-0_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -8,12 +8,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 0,
         "learning_rate": 0.01
     },
-    "GAT_features_4_layers_0_lr_0.001": {
+    "GAT_features-4_layers-0_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -22,12 +22,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 0,
         "learning_rate": 0.001
     },
-    "GAT_features_4_layers_0_lr_0.0001": {
+    "GAT_features-4_layers-0_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -36,12 +36,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 0,
         "learning_rate": 0.0001
     },
-    "GAT_features_4_layers_1_lr_0.01": {
+    "GAT_features-4_layers-1_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -50,12 +50,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 1,
         "learning_rate": 0.01
     },
-    "GAT_features_4_layers_1_lr_0.001": {
+    "GAT_features-4_layers-1_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -64,12 +64,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 1,
         "learning_rate": 0.001
     },
-    "GAT_features_4_layers_1_lr_0.0001": {
+    "GAT_features-4_layers-1_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -78,12 +78,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 1,
         "learning_rate": 0.0001
     },
-    "GAT_features_4_layers_2_lr_0.01": {
+    "GAT_features-4_layers-2_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -92,12 +92,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 2,
         "learning_rate": 0.01
     },
-    "GAT_features_4_layers_2_lr_0.001": {
+    "GAT_features-4_layers-2_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -106,12 +106,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 2,
         "learning_rate": 0.001
     },
-    "GAT_features_4_layers_2_lr_0.0001": {
+    "GAT_features-4_layers-2_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -120,12 +120,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 4,
         "num_hidden_layers": 2,
         "learning_rate": 0.0001
     },
-    "GAT_features_8_layers_0_lr_0.01": {
+    "GAT_features-8_layers-0_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -134,12 +134,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 0,
         "learning_rate": 0.01
     },
-    "GAT_features_8_layers_0_lr_0.001": {
+    "GAT_features-8_layers-0_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -148,12 +148,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 0,
         "learning_rate": 0.001
     },
-    "GAT_features_8_layers_0_lr_0.0001": {
+    "GAT_features-8_layers-0_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -162,12 +162,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 0,
         "learning_rate": 0.0001
     },
-    "GAT_features_8_layers_1_lr_0.01": {
+    "GAT_features-8_layers-1_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -176,12 +176,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 1,
         "learning_rate": 0.01
     },
-    "GAT_features_8_layers_1_lr_0.001": {
+    "GAT_features-8_layers-1_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -190,12 +190,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 1,
         "learning_rate": 0.001
     },
-    "GAT_features_8_layers_1_lr_0.0001": {
+    "GAT_features-8_layers-1_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -204,12 +204,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 1,
         "learning_rate": 0.0001
     },
-    "GAT_features_8_layers_2_lr_0.01": {
+    "GAT_features-8_layers-2_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -218,12 +218,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 2,
         "learning_rate": 0.01
     },
-    "GAT_features_8_layers_2_lr_0.001": {
+    "GAT_features-8_layers-2_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -232,12 +232,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 2,
         "learning_rate": 0.001
     },
-    "GAT_features_8_layers_2_lr_0.0001": {
+    "GAT_features-8_layers-2_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -246,12 +246,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 8,
         "num_hidden_layers": 2,
         "learning_rate": 0.0001
     },
-    "GAT_features_16_layers_0_lr_0.01": {
+    "GAT_features-16_layers-0_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -260,12 +260,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 0,
         "learning_rate": 0.01
     },
-    "GAT_features_16_layers_0_lr_0.001": {
+    "GAT_features-16_layers-0_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -274,12 +274,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 0,
         "learning_rate": 0.001
     },
-    "GAT_features_16_layers_0_lr_0.0001": {
+    "GAT_features-16_layers-0_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -288,12 +288,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 0,
         "learning_rate": 0.0001
     },
-    "GAT_features_16_layers_1_lr_0.01": {
+    "GAT_features-16_layers-1_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -302,12 +302,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 1,
         "learning_rate": 0.01
     },
-    "GAT_features_16_layers_1_lr_0.001": {
+    "GAT_features-16_layers-1_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -316,12 +316,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 1,
         "learning_rate": 0.001
     },
-    "GAT_features_16_layers_1_lr_0.0001": {
+    "GAT_features-16_layers-1_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -330,12 +330,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 1,
         "learning_rate": 0.0001
     },
-    "GAT_features_16_layers_2_lr_0.01": {
+    "GAT_features-16_layers-2_lr-0.01": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -344,12 +344,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 2,
         "learning_rate": 0.01
     },
-    "GAT_features_16_layers_2_lr_0.001": {
+    "GAT_features-16_layers-2_lr-0.001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -358,12 +358,12 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 2,
         "learning_rate": 0.001
     },
-    "GAT_features_16_layers_2_lr_0.0001": {
+    "GAT_features-16_layers-2_lr-0.0001": {
         "num_clients": 1,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
@@ -372,7 +372,7 @@
         "epochs_per_client": 1,
         "num_rounds": 50,
         "aggregation_strategy": "FedAvg",
-        "dry_run": true,
+        "dry_run": false,
         "num_hidden_params": 16,
         "num_hidden_layers": 2,
         "learning_rate": 0.0001

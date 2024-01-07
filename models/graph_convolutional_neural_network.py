@@ -20,7 +20,6 @@ class GCN(L.LightningModule):
         self.visualise = visualise
         self.learning_rate = learning_rate
 
-        torch.manual_seed(42)
         self.conv1 = GCNConv(num_features, num_hidden)
         self.hidden_layers = []
 

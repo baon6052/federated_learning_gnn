@@ -7,9 +7,7 @@ num_hidden_layers = [0, 1, 2]
 
 learning_rates = [0.01, 0.001, 0.0001]
 
-grid_search = list(
-    itertools.product(num_features, num_hidden_layers, learning_rates)
-)
+grid_search = list(itertools.product(num_features, num_hidden_layers, learning_rates))
 
 
 fixed_params = {
@@ -21,7 +19,7 @@ fixed_params = {
     "epochs_per_client": 1,
     "num_rounds": 50,
     "aggregation_strategy": "FedAvg",
-    "dry_run": True,
+    "dry_run": False,
 }
 
 for model_type in ["GAT", "GCN"]:
@@ -36,7 +34,7 @@ for model_type in ["GAT", "GCN"]:
         new_params_w_l_f["learning_rate"] = learning_rate
 
         all_experiments[
-            f"{model_type}_features_{features}_layers_{hidden_layers}_lr_{learning_rate}"
+            f"{model_type}_features-{features}_layers-{hidden_layers}_lr-{learning_rate}"
         ] = new_params_w_l_f
 
     with open(
