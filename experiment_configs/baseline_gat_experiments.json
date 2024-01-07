@@ -1,6 +1,6 @@
 {
     "experiment_1": {
-        "num_clients": 1,
+        "num_clients": 10,
         "dataset_name": "Cora",
         "slice_method": "node_feature",
         "percentage_overlap": 0,
@@ -8,9 +8,11 @@
         "num_hidden_params": 16,
         "epochs_per_client": 10,
         "num_rounds": 10,
-        "aggregation_strategy": "FedAvg",
-        "num_hidden_layers": 0,
-        "learning_rate": 0.01
+        "aggregation_strategy": "Krum",
+        "num_hidden_layers": 2,
+        "learning_rate": 0.01,
+        "dry_run": true,
+        "client_poison_perc": 0
     },
     "experiment_2": {
         "num_clients": 1,

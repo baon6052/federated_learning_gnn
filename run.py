@@ -156,8 +156,8 @@ def run_experiment(
             ),
         )
     elif aggregation_strategy == "Krum":
-        poisoned_client_num = int((client_poison_perc / 100) * num_clients)
-        to_keep = num_clients - poisoned_client_num - 2  # theoretical Krum formula
+        # poisoned_client_num = int((client_poison_perc / 100) * num_clients)
+        # to_keep = num_clients - poisoned_client_num - 2  # theoretical Krum formula
         strategy = fl.server.strategy.Krum(
             fraction_fit=1.0,
             fraction_evaluate=1.0,

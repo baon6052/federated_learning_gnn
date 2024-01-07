@@ -16,7 +16,7 @@ fixed_params = {
     "num_hidden_layers": 2,
 }
 
-client_poison_percs = [5, 10, 20]
+client_poison_percs = [10, 20, 30]
 aggregation_strategies = ["FedAvg", "FedMedian", "Krum"]
 
 grid_search = list(itertools.product(client_poison_percs, aggregation_strategies))
