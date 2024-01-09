@@ -13,7 +13,7 @@ fixed_params = {
     "dry_run": True,
     "learning_rate": 0.01,
     "num_hidden_params": 16,
-    "num_hidden_layers": 2,
+    "num_hidden_layers": 0,
 }
 
 client_poison_percs = [10, 20, 30]
