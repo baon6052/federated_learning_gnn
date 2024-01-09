@@ -26,15 +26,12 @@ class GAT(L.LightningModule):
         )
         self.learning_rate = learning_rate
 
-        out_features = num_hidden * num_heads
         self.hidden_layers = []
-        for i in range(1, num_hidden_layers + 1):
-            in_features = num_hidden * num_heads * i
-            out_features = in_features * num_heads
+        for i in range(num_hidden_layers):
             self.hidden_layers.append(
                 GATConv(
-                    in_features,
-                    out_features,
+                    num_hidden * num_heads,
+                    num_hidden,
                     heads=num_heads,
                     dropout=dropout,
                     concat=True,
@@ -42,9 +39,12 @@ class GAT(L.LightningModule):
             )
 
         self.hidden_layers = nn.ModuleList(self.hidden_layers)
-
         self.conv2 = GATConv(
-            out_features, num_classes, concat=False, heads=1, dropout=dropout
+            num_hidden * num_heads,
+            num_classes,
+            concat=False,
+            heads=1,
+            dropout=dropout,
         )
 
         self.visualise = visualise

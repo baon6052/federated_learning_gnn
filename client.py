@@ -70,6 +70,7 @@ def _set_parameters(model, parameters):
 def run_client(
     model_type: str,
     num_hidden_params: int,
+    num_hidden_layers: int,
     client_datasets: list[CustomDataset],
     num_epochs: int,
     cid: int,
@@ -80,12 +81,14 @@ def run_client(
         model = GAT(
             num_features=custom_dataset.dataset[0].num_features,
             num_hidden=num_hidden_params,
+            num_hidden_layers=num_hidden_layers,
             num_classes=custom_dataset.dataset[0].num_classes,
         )
     elif model_type == "GCN":
         model = GCN(
             num_features=custom_dataset.dataset[0].num_features,
             num_classes=custom_dataset.dataset[0].num_classes,
+            num_hidden_layers=num_hidden_layers,
         )
 
     return FlowerClient(model, custom_dataset, num_epochs)
