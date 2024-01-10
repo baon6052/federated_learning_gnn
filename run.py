@@ -12,6 +12,7 @@ from datasets.dataset import (
     NodeFeatureSliceDataset,
     PlanetoidDataset,
     PlanetoidDatasetType,
+    NodeFeatureSliceDataset2,
 )
 from models.graph_attention_network import GAT
 from models.graph_convolutional_neural_network import GCN
@@ -58,6 +59,12 @@ def run_experiment(
 
     if slice_method == "node_feature":
         custom_dataset = NodeFeatureSliceDataset(
+            PlanetoidDatasetType(dataset_name),
+            num_clients=num_clients,
+            overlap_percent=percentage_overlap,
+        )
+    elif slice_method == "node_feature2":
+        custom_dataset = NodeFeatureSliceDataset2(
             PlanetoidDatasetType(dataset_name),
             num_clients=num_clients,
             overlap_percent=percentage_overlap,
