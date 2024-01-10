@@ -21,22 +21,23 @@ def run_experiment(
     experiment_data: dict[str:any],
     experiment_name: str = "Bespoke Experiment",
     dry_run: bool = True,
+    group: str = "unnamed-group",
 ):
     dry_run = experiment_data["dry_run"]
     print(f"Running Experiement: {experiment_name}")
     if dry_run:
         wandb.init(
-            project="my-awesome-project",
+            project="my-awesome-project-rev2",
             entity="ml-sys",
             name=experiment_name,
-            group="rev1",
+            group=group,
         )
     else:
         wandb.init(
-            project="federated_learning_gnn",
+            project="federated_learning_gnn-rev2",
             entity="ml-sys",
             name=experiment_name,
-            group="rev1",
+            group=group,
         )
 
     num_clients = experiment_data["num_clients"]
@@ -181,9 +182,7 @@ def run_experiment(
 @click.option(
     "--slice_method",
     default=None,
-    type=click.Choice(
-        [None, "node_feature", "edge_feature", "graph_partition"]
-    ),
+    type=click.Choice([None, "node_feature", "edge_feature", "graph_partition"]),
 )
 @click.option("--percentage_overlap", default=0)
 @click.option("--model_type", default="GAT", type=click.Choice(["GCN", "GAT"]))
@@ -213,18 +212,24 @@ def run(
     dry_run: bool,
 ):
     if experiment_config_filename:
-        with open(
-            f"experiment_configs/{experiment_config_filename}.json"
-        ) as json_file:
+        with open(f"experiment_configs/{experiment_config_filename}.json") as json_file:
             experiments = json.load(json_file)
 
         if experiment_name:
             experiment_data = experiments[experiment_name]
             print(experiment_data)
-            run_experiment(experiment_data, experiment_name=experiment_name)
+            run_experiment(
+                experiment_data,
+                experiment_name=experiment_name,
+                group=experiment_config_filename,
+            )
         else:
             for experiment_name, experiment_data in experiments.items():
-                run_experiment(experiment_data, experiment_name=experiment_name)
+                run_experiment(
+                    experiment_data,
+                    experiment_name=experiment_name,
+                    group=experiment_config_filename,
+                )
     else:
         experiment_data = {
             "experiment_config_filename": experiment_config_filename,
@@ -241,7 +246,7 @@ def run(
             "aggregation_strategy": aggregation_strategy,
             "dry_run": dry_run,
         }
-        run_experiment(experiement_data=experiment_data)
+        run_experiment(experiement_data=experiment_data, group="unnamed-group")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import itertools
 import json
-
+from constants import gat_cora_constants, gat_pubmed_constants, gat_citeseer_constants
 
 fixed_params = {
     "num_clients": 1,
@@ -10,10 +10,7 @@ fixed_params = {
     "epochs_per_client": 1,
     "num_rounds": 100,
     "aggregation_strategy": "FedAvg",
-    "dry_run": True,
-    "learning_rate": 0.01,
-    "num_hidden_params": 16,
-    "num_hidden_layers": 2,
+    "dry_run": False,
 }
 
 datasets = ["Cora", "CiteSeer", "PubMed"]
@@ -22,6 +19,14 @@ all_experiments = {}
 for dataset in datasets:
     new_params = fixed_params.copy()
     new_params["dataset_name"] = dataset
+    if dataset == "Cora":
+        new_params = new_params.update(gat_cora_constants)
+
+    elif dataset == "CiteSeer":
+        new_params = new_params.update(gat_citeseer_constants)
+
+    elif dataset == "PubMed":
+        new_params = new_params.update(gat_pubmed_constants)
 
     all_experiments[f"GAT-dataset-{dataset}"] = new_params
 
