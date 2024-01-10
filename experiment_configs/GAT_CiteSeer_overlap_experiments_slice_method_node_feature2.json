@@ -6,6 +6,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAvg"
@@ -17,6 +20,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedProx"
@@ -28,6 +34,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedYogi"
@@ -39,6 +48,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdam"
@@ -50,6 +62,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedOpt"
@@ -61,6 +76,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdagrad"
@@ -72,6 +90,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAvg"
@@ -83,6 +104,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedProx"
@@ -94,6 +118,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedYogi"
@@ -105,6 +132,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdam"
@@ -116,6 +146,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedOpt"
@@ -127,6 +160,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdagrad"
@@ -138,6 +174,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAvg"
@@ -149,6 +188,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedProx"
@@ -160,6 +202,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedYogi"
@@ -171,6 +216,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdam"
@@ -182,6 +230,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedOpt"
@@ -193,6 +244,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdagrad"
@@ -204,6 +258,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAvg"
@@ -215,6 +272,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedProx"
@@ -226,6 +286,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedYogi"
@@ -237,6 +300,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdam"
@@ -248,6 +314,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedOpt"
@@ -259,6 +328,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 2,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdagrad"
@@ -270,6 +342,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAvg"
@@ -281,6 +356,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedProx"
@@ -292,6 +370,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedYogi"
@@ -303,6 +384,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdam"
@@ -314,6 +398,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedOpt"
@@ -325,6 +412,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdagrad"
@@ -336,6 +426,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAvg"
@@ -347,6 +440,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedProx"
@@ -358,6 +454,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedYogi"
@@ -369,6 +468,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdam"
@@ -380,6 +482,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedOpt"
@@ -391,6 +496,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdagrad"
@@ -402,6 +510,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAvg"
@@ -413,6 +524,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedProx"
@@ -424,6 +538,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedYogi"
@@ -435,6 +552,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdam"
@@ -446,6 +566,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedOpt"
@@ -457,6 +580,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdagrad"
@@ -468,6 +594,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAvg"
@@ -479,6 +608,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedProx"
@@ -490,6 +622,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedYogi"
@@ -501,6 +636,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdam"
@@ -512,6 +650,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedOpt"
@@ -523,6 +664,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 4,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdagrad"
@@ -534,6 +678,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAvg"
@@ -545,6 +692,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedProx"
@@ -556,6 +706,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedYogi"
@@ -567,6 +720,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdam"
@@ -578,6 +734,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedOpt"
@@ -589,6 +748,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdagrad"
@@ -600,6 +762,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAvg"
@@ -611,6 +776,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedProx"
@@ -622,6 +790,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedYogi"
@@ -633,6 +804,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdam"
@@ -644,6 +818,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedOpt"
@@ -655,6 +832,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdagrad"
@@ -666,6 +846,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAvg"
@@ -677,6 +860,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedProx"
@@ -688,6 +874,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedYogi"
@@ -699,6 +888,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdam"
@@ -710,6 +902,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedOpt"
@@ -721,6 +916,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdagrad"
@@ -732,6 +930,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAvg"
@@ -743,6 +944,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedProx"
@@ -754,6 +958,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedYogi"
@@ -765,6 +972,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdam"
@@ -776,6 +986,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedOpt"
@@ -787,6 +1000,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 8,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdagrad"
@@ -798,6 +1014,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAvg"
@@ -809,6 +1028,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedProx"
@@ -820,6 +1042,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedYogi"
@@ -831,6 +1056,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdam"
@@ -842,6 +1070,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedOpt"
@@ -853,6 +1084,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 0,
         "aggregation_strategy": "FedAdagrad"
@@ -864,6 +1098,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAvg"
@@ -875,6 +1112,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedProx"
@@ -886,6 +1126,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedYogi"
@@ -897,6 +1140,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdam"
@@ -908,6 +1154,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedOpt"
@@ -919,6 +1168,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 25,
         "aggregation_strategy": "FedAdagrad"
@@ -930,6 +1182,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAvg"
@@ -941,6 +1196,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedProx"
@@ -952,6 +1210,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedYogi"
@@ -963,6 +1224,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdam"
@@ -974,6 +1238,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedOpt"
@@ -985,6 +1252,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 50,
         "aggregation_strategy": "FedAdagrad"
@@ -996,6 +1266,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAvg"
@@ -1007,6 +1280,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedProx"
@@ -1018,6 +1294,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedYogi"
@@ -1029,6 +1308,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdam"
@@ -1040,6 +1322,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedOpt"
@@ -1051,6 +1336,9 @@
         "dry_run": false,
         "slice_method": "node_feature2",
         "dataset_name": "CiteSeer",
+        "num_hidden_params": 16,
+        "num_hidden_layers": 0,
+        "learning_rate": 0.0001,
         "num_clients": 10,
         "percentage_overlap": 100,
         "aggregation_strategy": "FedAdagrad"
