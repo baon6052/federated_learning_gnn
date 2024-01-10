@@ -1,5 +1,4 @@
 import lightning as L
-import torch
 from torch import nn, optim
 from torch.nn import Linear
 from torch_geometric.nn import GCNConv

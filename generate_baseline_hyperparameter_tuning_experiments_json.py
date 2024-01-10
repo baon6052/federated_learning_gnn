@@ -7,7 +7,9 @@ num_hidden_layers = [0, 1, 2]
 
 learning_rates = [0.01, 0.001, 0.0001]
 
-grid_search = list(itertools.product(num_features, num_hidden_layers, learning_rates))
+grid_search = list(
+    itertools.product(num_features, num_hidden_layers, learning_rates)
+)
 
 
 fixed_params = {
