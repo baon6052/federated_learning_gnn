@@ -49,7 +49,7 @@ for slice_method in ["node_feature", "node_feature2"]:
             ] = new_params.copy()
 
         with open(
-            f"experiment_configs/GAT_{dataset}_overlap_experiments_slice_method_{slice_method}.json",
+            f"experiment_configs/GAT_{dataset}_overlap_experiments_slice_method_{slice_method}_rev2.json",
             "w",
         ) as outfile:
             json.dump(all_experiments, outfile, indent=4)
