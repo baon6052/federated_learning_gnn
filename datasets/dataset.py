@@ -141,7 +141,8 @@ class NodeFeatureSliceDataset:
         self,
         name: PlanetoidDatasetType,
         num_clients: int,
-        client_poison_perc: None,
+        client_poison_perc: int = None,
+        node_features_flip_frac: float = 0.01,
         overlap_percent: int = 0,
         verbose: bool = False,
     ) -> None:
@@ -153,6 +154,7 @@ class NodeFeatureSliceDataset:
         self.num_classes = self.dataset.num_classes
 
         self.client_poison_perc = client_poison_perc
+        self.node_features_flip_frac = node_features_flip_frac
         self.poison_client_indices = None
 
         if self.client_poison_perc != 0:
@@ -188,7 +190,7 @@ class NodeFeatureSliceDataset:
         overlap_features = shuffled_features[:, :num_overlap_features]
         dataset_per_client = []
 
-        node_features_flip_frac = 0.1  # 0 to 1
+        node_features_flip_frac = self.node_features_flip_frac  # 0 to 1
 
         for i in range(self.num_clients):
             start_idx = num_overlap_features + i * num_unique_features
