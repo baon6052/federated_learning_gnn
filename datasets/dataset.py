@@ -71,6 +71,8 @@ class NodeFeatureSliceDataset2:
         self,
         name: PlanetoidDatasetType,
         num_clients: int,
+        client_poison_perc: int = None,
+        node_features_flip_frac: float = 0.01,
         overlap_percent: int = 0,
         verbose: bool = False,
     ) -> None:
@@ -81,10 +83,26 @@ class NodeFeatureSliceDataset2:
 
         self.num_classes = self.dataset.num_classes
 
+        self.client_poison_perc = client_poison_perc
+        self.node_features_flip_frac = node_features_flip_frac
+        self.poison_client_indices = None
+
+        if self.client_poison_perc != 0:
+            self.poison_client_indices = self.select_clients_to_poison()
+
         (
             self.dataset_per_client,
             self.num_features_per_client,
         ) = self._get_datasets()
+
+    def select_clients_to_poison(self):
+        num_poisoned_clients = int(self.num_clients * (self.client_poison_perc / 100))
+
+        poisoned_client_indices = np.random.choice(
+            self.num_clients, num_poisoned_clients, replace=False
+        )
+
+        return poisoned_client_indices
 
     def _get_datasets(self) -> list[Data]:
         # defining overlap as %  of total dataset size
@@ -108,6 +126,17 @@ class NodeFeatureSliceDataset2:
 
             unique_features = shuffled_features[:, start_idx:end_idx]
             partition_features = torch.cat((overlap_features, unique_features), dim=1)
+
+            if self.client_poison_perc != 0 and i in self.poison_client_indices:
+                shuffled_indices = torch.randperm(partition_features.shape[1])
+                indices_to_poison = shuffled_indices[
+                    : int(partition_features.shape[1] * self.node_features_flip_frac)
+                ]
+
+                # for index in indices_to_poison:
+                partition_features[:, indices_to_poison] = (
+                    1.0 - partition_features[:, indices_to_poison]
+                )
 
             dataset_per_client.append(
                 Data(
@@ -190,8 +219,6 @@ class NodeFeatureSliceDataset:
         overlap_features = shuffled_features[:, :num_overlap_features]
         dataset_per_client = []
 
-        node_features_flip_frac = self.node_features_flip_frac  # 0 to 1
-
         for i in range(self.num_clients):
             start_idx = num_overlap_features + i * num_unique_features
             end_idx = start_idx + num_unique_features
@@ -202,7 +229,7 @@ class NodeFeatureSliceDataset:
             if self.client_poison_perc != 0 and i in self.poison_client_indices:
                 shuffled_indices = torch.randperm(partition_features.shape[1])
                 indices_to_poison = shuffled_indices[
-                    : int(partition_features.shape[1] * node_features_flip_frac)
+                    : int(partition_features.shape[1] * self.node_features_flip_frac)
                 ]
 
                 # for index in indices_to_poison:
