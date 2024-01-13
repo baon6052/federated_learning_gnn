@@ -10,6 +10,7 @@ from datasets.dataset import (
     EdgeFeatureSliceDataset,
     GraphPartitionSliceDataset,
     NodeFeatureSliceDataset,
+    NodeFeatureSliceDataset2,
     PlanetoidDataset,
     PlanetoidDatasetType,
 )
@@ -60,6 +61,15 @@ def run_experiment(
 
     if slice_method == "node_feature":
         custom_dataset = NodeFeatureSliceDataset(
+            PlanetoidDatasetType(dataset_name),
+            num_clients=num_clients,
+            overlap_percent=percentage_overlap,
+            client_poison_perc=client_poison_perc,
+            node_features_flip_frac=node_features_flip_frac,
+        )
+
+    elif slice_method == "node_feature2":
+        custom_dataset = NodeFeatureSliceDataset2(
             PlanetoidDatasetType(dataset_name),
             num_clients=num_clients,
             overlap_percent=percentage_overlap,

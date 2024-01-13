@@ -71,9 +71,9 @@ class NodeFeatureSliceDataset2:
         self,
         name: PlanetoidDatasetType,
         num_clients: int,
+        overlap_percent: int = 0,
         client_poison_perc: int = None,
         node_features_flip_frac: float = 0.01,
-        overlap_percent: int = 0,
         verbose: bool = False,
     ) -> None:
         self.dataset = Planetoid(root="./datasets", name=name.value)
