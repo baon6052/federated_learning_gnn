@@ -116,7 +116,7 @@ def run_experiment(
             min_fit_clients=num_clients,
             min_evaluate_clients=num_clients,
             min_available_clients=num_clients,
-            proximal_mu=0.01,  # TODO: speak about potential ablation study for this  # noqa:E501
+            proximal_mu=0.1,  # TODO: speak about potential ablation study for this  # noqa:E501
         )
     elif aggregation_strategy == "FedYogi":
         strategy = fl.server.strategy.FedYogi(

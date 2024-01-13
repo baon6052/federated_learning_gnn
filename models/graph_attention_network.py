@@ -1,7 +1,11 @@
 import lightning as L
+import ray.util.rpdb
+import torch
 import torch.nn.functional as F
 from torch import nn, optim
 from torch_geometric.nn import GATConv
+
+from client_utils import get_model_parameters
 
 
 class GAT(L.LightningModule):
@@ -15,6 +19,8 @@ class GAT(L.LightningModule):
         num_hidden_layers: int = 0,
         visualise: bool = False,
         learning_rate: float = 0.01,
+        global_model_parameters=None,
+        proximal_mu: int = 0,
     ):
         super().__init__()
         self.conv1 = GATConv(
@@ -49,6 +55,8 @@ class GAT(L.LightningModule):
 
         self.visualise = visualise
         self.criterion = nn.CrossEntropyLoss()
+        self.global_model_parameters = global_model_parameters
+        self.proximal_mu = proximal_mu
 
     def forward(self, x, edge_index):
         x = F.dropout(x, p=0.6, training=self.training)
@@ -73,7 +81,24 @@ class GAT(L.LightningModule):
         out, h = self.forward(batch.x, batch.edge_index)
         out = out.cpu()
         batch = batch.cpu()
-        loss = self.criterion(out[batch.train_mask], batch.y[batch.train_mask])
+
+        proximal_regularisation = 0
+
+        if self.proximal_mu != 0:
+            proximal_term = 0.0
+            for local_weights, global_weights in zip(
+                get_model_parameters(self), self.global_model_parameters
+            ):
+                proximal_term += torch.square(
+                    (torch.tensor(local_weights - global_weights)).norm(2)
+                )
+
+            proximal_regularisation = (self.proximal_mu / 2) * proximal_term
+
+        loss = (
+            self.criterion(out[batch.train_mask], batch.y[batch.train_mask])
+            + proximal_regularisation
+        )
 
         self.log(
             "train_loss", loss, prog_bar=False, sync_dist=True, logger=True

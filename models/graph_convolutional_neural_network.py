@@ -13,6 +13,7 @@ class GCN(L.LightningModule):
         num_hidden_layers: int = 1,
         visualise: bool = False,
         learning_rate: float = 0.01,
+        proximal_mu: int = 0,
     ):
         super().__init__()
 
@@ -31,6 +32,7 @@ class GCN(L.LightningModule):
         self.classifier = Linear(2, num_classes)
 
         self.criterion = nn.CrossEntropyLoss()
+        self.proximal_mu = proximal_mu
 
     def forward(self, x, edge_index):
         h = self.conv1(x, edge_index)
