@@ -169,7 +169,7 @@ def run_experiment(
                 get_model_parameters(model)
             ),
         )
-    elif aggregation_strategy == "Krum":
+    elif aggregation_strategy == "Krum2":
         # poisoned_client_num = int((client_poison_perc / 100) * num_clients)
         # to_keep = num_clients - poisoned_client_num - 2  # theoretical Krum formula
         strategy = fl.server.strategy.Krum(
@@ -181,6 +181,7 @@ def run_experiment(
             initial_parameters=fl.common.ndarrays_to_parameters(
                 get_model_parameters(model)
             ),
+            num_malicious_clients=int(num_clients*(client_poison_perc/100))
         )
 
     elif aggregation_strategy == "FedMedian":

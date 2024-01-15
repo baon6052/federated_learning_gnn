@@ -19,9 +19,11 @@ fixed_params = {
 
 fixed_params.update(gat_cora_constants)
 
-client_poison_percs = [10, 30, 50, 100]
+client_poison_percs = [0, 10, 30, 50, 100]
 node_features_flip_fracs = [0.01, 0.10, 0.25, 0.50, 1]
-aggregation_strategies = ["FedAvg", "FedMedian", "Krum", "FedTrimmedAvg"]
+#client_poison_percs = [30]
+#node_features_flip_fracs = [0.50]
+aggregation_strategies = [ "Krum2"]
 
 grid_search = list(
     itertools.product(
