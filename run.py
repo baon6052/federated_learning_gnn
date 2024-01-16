@@ -7,12 +7,10 @@ import flwr as fl
 import wandb
 from client import get_model_parameters, run_client
 from datasets.dataset import (
-    EdgeFeatureSliceDataset,
-    GraphPartitionSliceDataset,
     NodeFeatureSliceDataset,
+    NodeFeatureSliceDataset2,
     PlanetoidDataset,
     PlanetoidDatasetType,
-    NodeFeatureSliceDataset2,
 )
 from models.graph_attention_network import GAT
 from models.graph_convolutional_neural_network import GCN
@@ -69,10 +67,6 @@ def run_experiment(
             num_clients=num_clients,
             overlap_percent=percentage_overlap,
         )
-    elif slice_method == "edge_feature":
-        custom_dataset = EdgeFeatureSliceDataset(custom_dataset)
-    elif slice_method == "graph_partition":
-        custom_dataset = GraphPartitionSliceDataset(custom_dataset)
 
     # Initialise model for aggregation strategy
     model = GAT(
@@ -189,7 +183,7 @@ def run_experiment(
 @click.option(
     "--slice_method",
     default=None,
-    type=click.Choice([None, "node_feature", "edge_feature", "graph_partition"]),
+    type=click.Choice([None, "node_feature", "node_feature2"]),
 )
 @click.option("--percentage_overlap", default=0)
 @click.option("--model_type", default="GAT", type=click.Choice(["GCN", "GAT"]))
@@ -218,8 +212,10 @@ def run(
     experiment_name: str,
     dry_run: bool,
 ):
-    if experiment_config_filename:
-        with open(f"experiment_configs/{experiment_config_filename}.json") as json_file:
+    if experiment_config_filename is not None:
+        with open(
+            f"experiment_configs/{experiment_config_filename}.json"
+        ) as json_file:
             experiments = json.load(json_file)
 
         if experiment_name:
@@ -253,7 +249,7 @@ def run(
             "aggregation_strategy": aggregation_strategy,
             "dry_run": dry_run,
         }
-        run_experiment(experiement_data=experiment_data, group="unnamed-group")
+        run_experiment(experiment_data=experiment_data, group="unnamed-group")
 
 
 if __name__ == "__main__":

@@ -106,7 +106,9 @@ class NodeFeatureSliceDataset2:
             end_idx = start_idx + unique_features_per_partition
 
             unique_features = shuffled_features[:, start_idx:end_idx]
-            partition_features = torch.cat((overlap_features, unique_features), dim=1)
+            partition_features = torch.cat(
+                (overlap_features, unique_features), dim=1
+            )
 
             dataset_per_client.append(
                 Data(
@@ -167,7 +169,9 @@ class NodeFeatureSliceDataset:
         num_overlap_features = int(
             num_node_features_per_client * (self.overlap_percent / 100)
         )
-        num_unique_features = num_node_features_per_client - num_overlap_features
+        num_unique_features = (
+            num_node_features_per_client - num_overlap_features
+        )
         overlap_features = shuffled_features[:, :num_overlap_features]
         dataset_per_client = []
 
@@ -176,7 +180,9 @@ class NodeFeatureSliceDataset:
             end_idx = start_idx + num_unique_features
 
             unique_features = shuffled_features[:, start_idx:end_idx]
-            partition_features = torch.cat((overlap_features, unique_features), dim=1)
+            partition_features = torch.cat(
+                (overlap_features, unique_features), dim=1
+            )
 
             dataset_per_client.append(
                 Data(
@@ -203,19 +209,3 @@ class NodeFeatureSliceDataset:
         return [
             CustomDataset(dataset=[data]) for data in dataset_per_client
         ], partition_features.shape[1]
-
-
-class EdgeFeatureSliceDataset:
-    def __init__(self, dataset: PlanetoidDataset) -> None:
-        self.dataset = dataset
-
-    def slice_dataset(num_partitions: int, overlap_amount: int):
-        pass
-
-
-class GraphPartitionSliceDataset:
-    def __init__(self, dataset: PlanetoidDataset) -> None:
-        self.dataset = dataset
-
-    def slice_dataset(nums_partitions: int):
-        pass

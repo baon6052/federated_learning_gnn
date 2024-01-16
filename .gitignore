@@ -4,5 +4,6 @@ datasets/Cora
 datasets/PubMed
 datasets/CiteSeer
 wandb
+wandb_data
 .vscode
 **.DS_Store**

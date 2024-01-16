@@ -1,6 +1,11 @@
 import itertools
 import json
-from constants import gat_cora_constants, gat_pubmed_constants, gat_citeseer_constants
+
+from constants import (
+    gat_citeseer_constants,
+    gat_cora_constants,
+    gat_pubmed_constants,
+)
 
 fixed_params = {
     "model_type": "GAT",
