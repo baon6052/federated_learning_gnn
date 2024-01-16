@@ -37,3 +37,5 @@ Example usage:
 ```shell
 python3.11 run.py --num_clients 10 --dataset_name Cora --slice_method node_feature --percentage_overlap 30 --model_type GAT
 ```
+
+Please note to perform data poisoning experiments, please checkout to the `data_poisoning` branch.
